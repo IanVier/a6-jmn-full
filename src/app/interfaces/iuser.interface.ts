@@ -1,4 +1,4 @@
-export interface IUsers {
+export interface IUser {
   _id: string;
   id: number;
   first_name: string;
@@ -14,5 +14,9 @@ export interface IApiResponse {
   per_page: number;
   total: number;
   total_pages: number;
-  results: IUsers[]
+  results: IUser[]
+}
+
+export interface IError {
+  error: string
 }

@@ -1,0 +1,22 @@
+
+<h1 class="text__title">Vista detalle usuario</h1>
+<div class="card" >
+  <img [src]="userDetail?.image" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h2 class="card-title"> {{userDetail?.first_name}} </h2>
+    <h2 class="card-title"> {{userDetail?.last_name}} </h2>
+    <hr>
+    <p class="card-text"> <span class="text__title">Usuario:</span> {{userDetail?.username}} </p>
+    <p class="card-text"> <span class="text__title">Email:</span> {{userDetail?.email}} </p>
+    <p class="card-text"> <span class="text__title">Password:</span> {{userDetail?.password}} </p>
+    <p class="card-text"> <span class="text__title">Nº Id: </span>{{userDetail?.id}} </p>
+    <p class="card-text"> <span class="text__title">Id: </span>{{userDetail?._id}} </p>
+    <div class="btn-wrap">
+        <a (click)="openModal()" class="btn btn-danger btn-lg">Eliminar</a>
+        <a [routerLink]="['/user/edit',userDetail?._id]" class="btn btn-primary btn-lg">Actualizar</a>
+        <a href="#" [routerLink]="['/home']" class="btn btn-secondary btn-lg">Volver a listado</a>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
