@@ -1,16 +1,18 @@
 import { Component, inject } from '@angular/core';
-import { IApiResponse, IUsers } from '../../interfaces/iusers.interface';
+import { IApiResponse, IUser } from '../../interfaces/iuser.interface';
 import { UserService } from '../../services/user.service';
+import { UserCardComponent } from '../user-card/user-card.component';
+
 
 @Component({
   selector: 'app-users-list',
-  imports: [],
+  imports: [UserCardComponent],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
 export class UsersListComponent {
   userService = inject(UserService)
-  userData: IUsers[] = []
+  userData: IUser[] = []
 
   ngOnInit() {
     this.uploadData()
