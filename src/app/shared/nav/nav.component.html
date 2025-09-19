@@ -22,6 +22,7 @@
             aria-current="page"
             [routerLink]="['/home']"
             routerLinkActive="activo"
+            (click)="collapseNavbar()"
             >Inicio</a
           >
         </li>
@@ -30,6 +31,7 @@
             class="nav-link"
             [routerLink]="['/newuser']"
             routerLinkActive="activo"
+            (click)="collapseNavbar()"
             >Nuevo usuario</a
           >
         </li>
