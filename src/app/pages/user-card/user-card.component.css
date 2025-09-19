@@ -1,0 +1,45 @@
+.card {
+    min-height: 335px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.btn-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn__touch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 80%;
+    border-radius: 50%;
+    margin: 8px auto;
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: 16px;
+}
+a:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.btn_borrar:hover {
+    color: red;
+}
