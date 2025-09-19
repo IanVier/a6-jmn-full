@@ -1,1 +1,9 @@
-<p>user-delete works!</p>
+<div class="card w-100 p-3">
+    <div class="card-body ">
+        <h4 class="card-title">¿Desea eliminar al usuario {{ userData.firstName }} {{ userData.lastName }}?</h4>
+        <div class="btn__wrap d-flex gap-4">
+            <button (click)="closeModal()" type="button" class="btn btn-secondary btn-lg">Cancelar</button>
+            <button (click)="deleteUser()" type="button" class="btn btn-danger btn-lg">Eliminar</button>
+        </div>
+    </div>
+</div>
