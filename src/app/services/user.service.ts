@@ -10,9 +10,11 @@ export class UserService {
   private endPoint = 'https://peticiones.online/api/users'
   private httpClient = inject(HttpClient)
 
-  getAll(): Promise<IApiResponse> {
-    return lastValueFrom(this.httpClient.get<IApiResponse>(this.endPoint))
-  }
+  getAll(pageNumber: number = 1): Promise<IApiResponse> {
+  return lastValueFrom(
+    this.httpClient.get<IApiResponse>(`${this.endPoint}?page=${pageNumber}`)
+  );
+}
 
   getById(_id: string): Promise<IUser> {
     return lastValueFrom(this.httpClient.get<IUser>(`${this.endPoint}/${_id}`))
