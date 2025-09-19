@@ -1,4 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
 
+
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* :root {
+    --header-heigth: 64px 
+} */
+
+
+/* RESETS GLOBALES */
+
+/* Box-sizing universal para facilitar el layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Elimina márgenes y paddings predeterminados para el body y elementos comunes */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Establece el tamaño de fuente base en el elemento raíz (html)
+   Esto permite usar unidades 'rem' para un escalado responsivo más fácil. */
+html {
+  min-height: 100%;
+  position: relative;
+  font-size: 62.5%; /* Esto hace que 1rem = 10px (16px * 0.625 = 10px) */
+  line-height: 1.15; /* Mejora la legibilidad */
+  -webkit-text-size-adjust: 100%; /* Evita que Safari cambie el tamaño del texto */
+}
+
+/* Configuración básica para el body */
+body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Fuente por defecto, cámbiala a la que prefieras */
+  font-size: 1.6rem; /* Restablece el tamaño de fuente para el cuerpo a 16px */
+  color: #333; /* Color de texto por defecto */
+  background-color: #f4f4f4; /* Color de fondo ligero */
+  -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para Webkit */
+  -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes para Firefox/Mac */
+}
+
+/* Enlaces: quita el subrayado y establece un color por defecto */
+a {
+  color: inherit; /* Hereda el color del texto del padre */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+
+/* Listas: quita los estilos de viñetas predeterminados */
+ul, ol {
+  list-style: none;
+}
+
+/* Elementos de imagen: para que sean responsivas por defecto */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Elimina espacio extra debajo de las imágenes */
+}
+
+
+/* Botones: Asegura que el cursor sea un puntero */
+button {
+  cursor: pointer;
+}
+
+/* Opcional: Estilos para el enfoque de accesibilidad.
+   Es importante no eliminar completamente el `outline` sin proporcionar una alternativa visual. */
+:focus-visible {
+  outline: 2px solid #007bff; /* Un borde azul cuando un elemento tiene foco */
+  outline-offset: 2px;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,18 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  /* Elimina cualquier position: fixed o sticky */
+  position: static;
+  width: 100%;
+  background: #f1f1f1;
+  padding: 1em;
+  text-align: center;
+}

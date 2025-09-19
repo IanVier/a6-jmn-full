@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { passwordValidator } from './passwordValidator';
 import { IUser } from '../../interfaces/iuser.interface';
+import { toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-form',
@@ -63,7 +64,7 @@ export class FormComponent {
         this.newUser()
       }
     }
-    this.router.navigate(['/home']);
+    this.router.navigate(['/home'])
   }
 
   async newUser() {
@@ -84,6 +85,7 @@ export class FormComponent {
         const response: IUser = await this.userService.update( this.userId!,userData)
         this.userForm.patchValue(response)
         console.log('Usuario actualizado!', response)
+        toast.success(`El usuario ${response.first_name} ${response.last_name} ha sido actualizad@.` )
     }
     catch (error) {
       alert(error)
