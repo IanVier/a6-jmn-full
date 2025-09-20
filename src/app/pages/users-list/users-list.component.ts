@@ -15,6 +15,7 @@ export class UsersListComponent {
   userData: IUser[] = []
   pageNumber: number = 1
   totalPages: number = 2
+  pages: number[] = []
 
 
   ngOnInit() {
@@ -24,17 +25,17 @@ export class UsersListComponent {
   async uploadData (pageNumber: number) {
     try {
         const response: IApiResponse = await this.userService.getAll(pageNumber)
-        this.pageNumber = response.page;
+        this.pageNumber = response.page
         this.totalPages = response.total_pages
-        this.userData = response.results;
-        console.log('estoy en uploadData', this.pageNumber);
+        this.userData = response.results
+        this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1)
+        console.log('estoy en uploadData', this.pageNumber)
     }
     catch (error) {
       alert(error)
     }
   }
   gotoPrev() {
-    const totalPages = this.totalPages
     let pageNumber = this.pageNumber 
     if(pageNumber === 1) {
       this.pageNumber = pageNumber
@@ -58,5 +59,8 @@ export class UsersListComponent {
     }
   }
 
+  goToPageX(pageClick: number){
+    this.uploadData(pageClick) 
+  }
 
 }

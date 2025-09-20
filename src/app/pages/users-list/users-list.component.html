@@ -1,13 +1,25 @@
-
 <h1 class="my-4 mx-4">Lista de usuarios</h1>
-<div class="container">
+<section class="container">
     <ul class="row list-unstyled g-3">
         @for (user of userData; track user.id) {
-            <li class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <app-user-card [userDetail]="user" ></app-user-card>
-            </li>
+        <li class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <app-user-card [userDetail]="user"></app-user-card>
+        </li>
         }
     </ul>
-    <button (click)="gotoPrev()"> - </button>
-    <button (click)="gotoNext()"> + </button>
-</div>
+</section>
+<nav class="m-5"  aria-label="...">
+    <ul class="pagination  justify-content-center">
+        <li class="page-item">
+            <button (click)="gotoPrev()" class="page-link">Previous</button>
+        </li>
+        @for (page of pages; track page) {
+        <li class="page-item active" [class.active]="page === pageNumber">
+            <button class="page-link" aria-current="page" (click)="goToPageX(page)">{{page}}</button>
+        </li>
+        }
+        <li class="page-item">
+            <button class="page-link" (click)="gotoNext()">Next</button>
+        </li>
+    </ul>
+</nav>
