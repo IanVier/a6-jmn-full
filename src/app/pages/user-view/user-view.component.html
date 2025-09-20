@@ -1,22 +1,80 @@
+<div class="userView">
+  <h1 class="text__title m-4">Vista detalle usuario</h1>
 
-<h1 class="text__title">Vista detalle usuario</h1>
-<div class="card" >
-  <img [src]="userDetail?.image" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h2 class="card-title"> {{userDetail?.first_name}} </h2>
-    <h2 class="card-title"> {{userDetail?.last_name}} </h2>
-    <hr>
-    <p class="card-text"> <span class="text__title">Usuario:</span> {{userDetail?.username}} </p>
-    <p class="card-text"> <span class="text__title">Email:</span> {{userDetail?.email}} </p>
-    <p class="card-text"> <span class="text__title">Password:</span> {{userDetail?.password}} </p>
-    <p class="card-text"> <span class="text__title">Nº Id: </span>{{userDetail?.id}} </p>
-    <p class="card-text"> <span class="text__title">Id: </span>{{userDetail?._id}} </p>
-    <div class="btn-wrap">
-        <a (click)="openModal()" class="btn btn-danger btn-lg">Eliminar</a>
-        <a [routerLink]="['/user/edit',userDetail?._id]" class="btn btn-primary btn-lg">Actualizar</a>
-        <a href="#" [routerLink]="['/home']" class="btn btn-secondary btn-lg">Volver a listado</a>
+  <section class="card">
+    <img
+      [src]="userDetail?.image"
+      class="card-img-top"
+      alt="Imagen del usuario"
+    />
+
+    <div class="card-body">
+      <h2 class="card-title">{{ userDetail?.first_name }}</h2>
+      <h2 class="card-title">{{ userDetail?.last_name }}</h2>
+      <hr />
+
+      <!-- Usuario -->
+      <div class="row mb-2">
+        <div class="col-3 fw-bold">Usuario:</div>
+        <div class="col-9">{{ userDetail?.username }}</div>
+      </div>
+
+      <!-- Email -->
+      <div class="row mb-2 align-items-center">
+        <div class="col-3 fw-bold">Email:</div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="form-control-plaintext w-100"
+            [value]="userDetail?.email"
+            readonly
+          />
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="row mb-2 align-items-center">
+        <div class="col-3 fw-bold">Password:</div>
+        <div class="col-9">
+          <input
+            type="password"
+            class="form-control-plaintext w-100"
+            [value]="userDetail?.password"
+            readonly
+          />
+        </div>
+      </div>
+
+      <!-- Nº Id -->
+      <div class="row mb-2">
+        <div class="col-3 fw-bold">Nº Id:</div>
+        <div class="col-9">{{ userDetail?.id }}</div>
+      </div>
+
+      <!-- Id -->
+      <div class="row mb-3">
+        <div class="col-3 fw-bold">Id:</div>
+        <div class="col-9 text-truncate" title="{{ userDetail?._id }}">
+          {{ userDetail?._id }}
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="d-flex gap-2">
+        <a (click)="openModal()" class="btn btn-danger btn-lg flex-fill"
+          >Eliminar</a
+        >
+        <a
+          [routerLink]="['/user/edit', userDetail?._id]"
+          class="btn btn-primary btn-lg flex-fill"
+          >Actualizar</a
+        >
+        <a [routerLink]="['/home']" class="btn btn-secondary btn-lg flex-fill"
+          >Volver a listado</a
+        >
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>

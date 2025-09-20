@@ -11,10 +11,8 @@ export class UserService {
   private httpClient = inject(HttpClient)
 
   getAll(pageNumber: number = 1): Promise<IApiResponse> {
-  return lastValueFrom(
-    this.httpClient.get<IApiResponse>(`${this.endPoint}?page=${pageNumber}`)
-  );
-}
+  return lastValueFrom(this.httpClient.get<IApiResponse>(`${this.endPoint}?page=${pageNumber}`))
+  }
 
   getById(_id: string): Promise<IUser> {
     return lastValueFrom(this.httpClient.get<IUser>(`${this.endPoint}/${_id}`))
@@ -31,6 +29,5 @@ export class UserService {
   delete(_id: string): Promise<IUser | IError> {
     return lastValueFrom(this.httpClient.delete<IUser | IError>(`${this.endPoint}/${_id}`))
   }
-
 
 }

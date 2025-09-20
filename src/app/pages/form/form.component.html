@@ -1,39 +1,62 @@
-
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mx-auto form ">
-
-    <h3 class="form__title  input-group-lg"> {{formTitle}} </h3>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mx-auto form p-4">
+    <h3 class="form__title input-group-lg">{{ formTitle }}</h3>
 
     <div>
         <label class="form-label mt-2 mb-0" for="first_name">Nombre</label>
-        <input class="form-control" type="text" id="first_name"  formControlName="first_name">
+        <input
+            class="form-control"
+            type="text"
+            id="first_name"
+            formControlName="first_name"
+        />
         @if(checkControl('first_name','required')){
-            <p class="error">El campo nombre es obligatorio.</p>
+        <p class="error">El campo nombre es obligatorio.</p>
         }
     </div>
     <div>
         <label class="form-label mt-2 mb-0" for="last_name">Apellido</label>
-        <input class="form-control" type="text" id="last_name" formControlName="last_name">
+        <input
+        class="form-control"
+        type="text"
+        id="last_name"
+        formControlName="last_name"
+        />
         @if(checkControl('last_name','required')){
-            <p class="error">El campo apellido es obligatorio.</p>
+        <p class="error">El campo apellido es obligatorio.</p>
         }
     </div>
     <div>
         <label class="form-label mt-2 mb-0" for="email">Email</label>
-        <input class="form-control" type="text" id="email" formControlName="email">
+        <input
+        class="form-control"
+        type="text"
+        id="email"
+        formControlName="email"
+        />
         @if(checkControl('email','required')){
-            <p class="error">El campo email es obligatorio.</p>
+        <p class="error">El campo email es obligatorio.</p>
         }
     </div>
     <div>
         <label class="form-label mt-2 mb-0" for="image">Imagen</label>
-        <input class="form-control" type="text" id="image" formControlName="image">
+        <input
+        class="form-control"
+        type="text"
+        id="image"
+        formControlName="image"
+        />
         @if(checkControl('email','required')){
         <p class="error">El campo imagen es obligatorio.</p>
         }
     </div>
     <div>
         <label class="form-label mt-2 mb-0" for="username">Alias</label>
-        <input class="form-control" type="text" id="username" formControlName="username">
+        <input
+            class="form-control"
+            type="text"
+            id="username"
+            formControlName="username"
+        />
         @if(checkControl('username','passwordValidator')){
         <p class="error">El campo alias es obligatorio.</p>
         }
@@ -41,22 +64,29 @@
     <div>
         <label class="form-label mt-2 mb-0" for="password">Contraseña</label>
         <div class="wrap__passw">
-            <input class="form-control" [type]="typeInputPassword" id="password" formControlName="password">
-            <button type="button" (click)="showPassword()" class="btn__showPassword">👁️</button>
+            <input
+                class="form-control"
+                [type]="typeInputPassword"
+                id="password"
+                formControlName="password"
+            />
+            <img (click)="showPassword()" [src]="srcShowPassword" />
         </div>
-
         @if(checkControl('password','required')){
-        <p class="error">El campo contraseña es obligatorio.</p>
-        }
-        @if(checkControl('password','passwordValidator')){
-        <p class="error">La longitud de al menos 8 caracteres.</p>
-        <p class="error">Al menos una letra mayúscula.</p>
-        <p class="error">Al menos una letra minúscula.</p>
-        <p class="error">Al menos un número.</p>
-        <p class="error">Al menos un carácter especial.</p>
+            <p class="error">El campo contraseña es obligatorio.</p>
+        } @if(checkControl('password','passwordValidator')){
+            <p class="error">La longitud de al menos 8 caracteres.</p>
+            <p class="error">Al menos una letra mayúscula.</p>
+            <p class="error">Al menos una letra minúscula.</p>
+            <p class="error">Al menos un número.</p>
+            <p class="error">Al menos un carácter especial.</p>
         }
     </div>
 
-    <input type="submit"  [disabled]="!userForm.valid" [value]="btnSave" class="btn btn-success mt-2 btn-lg">
-
+    <input
+        type="submit"
+        [disabled]="!userForm.valid"
+        [value]="btnSave"
+        class="btn btn-primary mt-2 btn-lg w-100 mt-4"
+    />
 </form>
