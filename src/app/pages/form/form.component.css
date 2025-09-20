@@ -2,3 +2,17 @@
     max-width: 300px;
     margin: 86px auto;
 }
+.error {
+    color: red;
+    font-size: 1rem;
+}
+.form__title {
+  text-align: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+
+.wrap__passw {
+  display: flex;
+}
