@@ -22,10 +22,20 @@ export class FormComponent {
   public btnSave: string = ''
   private router = inject(Router)
 
-  typeInputPassword = "password"
+  typeInputPassword = 'password'
+  srcShowPassword = '/icons/eye.png'
 
   showPassword() {
-    this.typeInputPassword = this.typeInputPassword === 'text' ? 'password' : 'text'
+   //this.typeInputPassword = this.typeInputPassword === 'text' ? 'password' : 'text'
+
+    if(this.typeInputPassword === 'text') {
+      this.typeInputPassword = 'password'
+      this.srcShowPassword = '/icons/eye.png'
+    } else {
+      this.typeInputPassword = 'text'
+      this.srcShowPassword = '/icons/eye-slash.png'
+    }
+
   }
 
   constructor() {

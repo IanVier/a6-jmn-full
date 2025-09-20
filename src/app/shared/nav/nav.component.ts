@@ -9,4 +9,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavComponent {
 
+
+  collapseNavbar() {
+  const navbar = document.getElementById('navbarSupportedContent');
+  if (navbar && navbar.classList.contains('show')) {
+    navbar.classList.remove('show');
+  }
+}
+
 }

@@ -13,20 +13,54 @@ import { UserCardComponent } from '../user-card/user-card.component';
 export class UsersListComponent {
   userService = inject(UserService)
   userData: IUser[] = []
+  pageNumber: number = 1
+  totalPages: number = 2
+  pages: number[] = []
+
 
   ngOnInit() {
-    this.uploadData()
+    this.uploadData(this.pageNumber)
   }
 
-  async uploadData () {
+  async uploadData (pageNumber: number) {
     try {
-        const response: IApiResponse = await this.userService.getAll()
+        const response: IApiResponse = await this.userService.getAll(pageNumber)
+        this.pageNumber = response.page
+        this.totalPages = response.total_pages
         this.userData = response.results
+        this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1)
+        console.log('estoy en uploadData', this.pageNumber)
     }
     catch (error) {
       alert(error)
     }
   }
+  gotoPrev() {
+    let pageNumber = this.pageNumber 
+    if(pageNumber === 1) {
+      this.pageNumber = pageNumber
+      this.uploadData(pageNumber) 
+    } else {
+      pageNumber  = this.pageNumber -1
+      this.uploadData(pageNumber) 
+    }
 
+  }
+
+  gotoNext() {
+    const totalPages = this.totalPages
+    let pageNumber = this.pageNumber 
+    if(pageNumber === totalPages) {
+      this.pageNumber = pageNumber
+      this.uploadData(pageNumber) 
+    } else {
+      pageNumber  = this.pageNumber + 1
+      this.uploadData(pageNumber) 
+    }
+  }
+
+  goToPageX(pageClick: number){
+    this.uploadData(pageClick) 
+  }
 
 }
