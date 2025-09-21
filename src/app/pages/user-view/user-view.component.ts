@@ -36,7 +36,7 @@ export class UserViewComponent {
       if (this.userId) {
         this.loadUser()
     } 
-  });
+  })
 }
 
   async loadUser() {

@@ -56,9 +56,8 @@
 
     <div class="form-floating mb-3">
         <div class="wrap__passw">
-            <input class="form-control pt-5 fs-5" [type]="typeInputPassword" id="password" formControlName="password"
-                placeholder="Ingresa tu contraseña" />
-            <img (click)="showPassword()" [src]="srcShowPassword" />
+            <input class="form-control pt-5 fs-5" [type]="typeInputPassword" id="password" formControlName="password" />
+            <img class="imgShowPass" (click)="showPassword()" [src]="srcShowPassword" />
         </div>
         <label for="password">Contraseña</label>
         @if(checkControl('password','required')){

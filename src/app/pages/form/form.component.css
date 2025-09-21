@@ -15,5 +15,15 @@
 
 .wrap__passw {
   display: flex;
+  align-items: center;
 }
 
+.imgShowPass {
+  height: 34px;
+}
+
+.form-floating > .form-control {
+  padding-top: 0.3rem;   
+  padding-bottom: 0.3rem; 
+  height: auto;  
+}

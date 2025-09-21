@@ -34,6 +34,7 @@ export class UsersListComponent {
       alert(error)
     }
   }
+  
   gotoPrev() {
     let pageNumber = this.pageNumber 
     if(pageNumber === 1) {
