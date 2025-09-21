@@ -36,7 +36,10 @@
         formControlName="email"
         />
         @if(checkControl('email','required')){
-        <p class="error">El campo email es obligatorio.</p>
+            <p class="error">El campo email es obligatorio.</p>
+        }
+        @if(checkControl('email', 'pattern')){
+            <p class="error">El email tiene que ser valido</p>
         }
     </div>
 <!-- Imagen -->

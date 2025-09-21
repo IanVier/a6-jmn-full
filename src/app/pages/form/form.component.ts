@@ -46,7 +46,8 @@ export class FormComponent {
         Validators.required
       ]),
       email: new FormControl("",[
-        Validators.required
+        Validators.required,
+        Validators.pattern(/^\w+\@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)
       ]),
       image: new FormControl("",[
         Validators.required
