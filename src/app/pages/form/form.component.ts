@@ -26,8 +26,6 @@ export class FormComponent {
   srcShowPassword = '/icons/eye.png'
 
   showPassword() {
-   //this.typeInputPassword = this.typeInputPassword === 'text' ? 'password' : 'text'
-
     if(this.typeInputPassword === 'text') {
       this.typeInputPassword = 'password'
       this.srcShowPassword = '/icons/eye.png'
@@ -35,7 +33,6 @@ export class FormComponent {
       this.typeInputPassword = 'text'
       this.srcShowPassword = '/icons/eye-slash.png'
     }
-
   }
 
   constructor() {
@@ -49,7 +46,8 @@ export class FormComponent {
         Validators.required
       ]),
       email: new FormControl("",[
-        Validators.required
+        Validators.required,
+        Validators.email
       ]),
       image: new FormControl("",[
         Validators.required
