@@ -1,6 +1,6 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mx-auto form p-4">
     <h3 class="form__title input-group-lg">{{ formTitle }}</h3>
-
+<!-- Nombre -->
     <div>
         <label class="form-label mt-2 mb-0" for="first_name">Nombre</label>
         <input
@@ -13,6 +13,7 @@
         <p class="error">El campo nombre es obligatorio.</p>
         }
     </div>
+<!-- Apellido -->
     <div>
         <label class="form-label mt-2 mb-0" for="last_name">Apellido</label>
         <input
@@ -25,6 +26,7 @@
         <p class="error">El campo apellido es obligatorio.</p>
         }
     </div>
+<!-- Email -->
     <div>
         <label class="form-label mt-2 mb-0" for="email">Email</label>
         <input
@@ -35,6 +37,13 @@
         />
         @if(checkControl('email','required')){
         <p class="error">El campo email es obligatorio.</p>
+        }
+    </div>
+<!-- Imagen -->
+    <div>
+        @if (userForm.get('image')?.value) {
+            <img [src]="userForm.get('image')?.value" 
+                class="img-fluid rounded-circle w-25 mt-2">
         }
     </div>
     <div>
@@ -49,6 +58,7 @@
         <p class="error">El campo imagen es obligatorio.</p>
         }
     </div>
+<!-- Alias -->
     <div>
         <label class="form-label mt-2 mb-0" for="username">Alias</label>
         <input
@@ -61,6 +71,7 @@
         <p class="error">El campo alias es obligatorio.</p>
         }
     </div>
+<!-- Contraseña -->
     <div>
         <label class="form-label mt-2 mb-0" for="password">Contraseña</label>
         <div class="wrap__passw">
@@ -82,7 +93,7 @@
             <p class="error">Al menos un carácter especial.</p>
         }
     </div>
-
+<!-- btn enviar form -->
     <input
         type="submit"
         [disabled]="!userForm.valid"

@@ -26,8 +26,6 @@ export class FormComponent {
   srcShowPassword = '/icons/eye.png'
 
   showPassword() {
-   //this.typeInputPassword = this.typeInputPassword === 'text' ? 'password' : 'text'
-
     if(this.typeInputPassword === 'text') {
       this.typeInputPassword = 'password'
       this.srcShowPassword = '/icons/eye.png'
@@ -35,7 +33,6 @@ export class FormComponent {
       this.typeInputPassword = 'text'
       this.srcShowPassword = '/icons/eye-slash.png'
     }
-
   }
 
   constructor() {
