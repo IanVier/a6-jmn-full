@@ -1,8 +1,8 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mx-auto form p-4">
-    <h3 class="form__title input-group-lg">{{ formTitle }}</h3>
+    <h3 class="form__title  ">{{ formTitle }}</h3>
 <!-- Nombre -->
     <div>
-        <label class="form-label mt-2 mb-0" for="first_name">Nombre</label>
+        <label class="form-floating mt-2 mb-0" for="first_name" >Nombre</label>
         <input
             class="form-control"
             type="text"
@@ -34,6 +34,7 @@
         type="text"
         id="email"
         formControlName="email"
+        placeholder=" "
         />
         @if(checkControl('email','required')){
             <p class="error">El campo email es obligatorio.</p>
@@ -70,7 +71,7 @@
             id="username"
             formControlName="username"
         />
-        @if(checkControl('username','passwordValidator')){
+        @if(checkControl('username','required')){
         <p class="error">El campo alias es obligatorio.</p>
         }
     </div>

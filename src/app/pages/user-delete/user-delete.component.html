@@ -1,6 +1,6 @@
 <div class="card w-100 p-3">
     <div class="card-body ">
-        <h4 class="card-title mb-4">¿Desea eliminar al usuario {{ userData.firstName }} {{ userData.lastName }}?</h4>
+        <h4 class="card-title mb-4">¿Desea eliminar al usuario <span class="nameDelete">{{ userData.firstName }} {{ userData.lastName }}</span>?</h4>
         <div class="btn__wrap d-flex gap-4  justify-content-end">
             <button (click)="closeModal()" type="button" class="btn btn-secondary btn-lg">Cancelar</button>
             <button (click)="deleteUser()" type="button" class="btn btn-danger btn-lg">Eliminar</button>

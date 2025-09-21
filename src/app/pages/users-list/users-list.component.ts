@@ -29,7 +29,6 @@ export class UsersListComponent {
         this.totalPages = response.total_pages
         this.userData = response.results
         this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1)
-        console.log('estoy en uploadData', this.pageNumber)
     }
     catch (error) {
       alert(error)
