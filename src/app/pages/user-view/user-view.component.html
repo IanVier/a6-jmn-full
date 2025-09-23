@@ -1,80 +1,83 @@
-<div class="userView">
+
+<main class="userView">
   <h1 class="text__title m-4">Vista detalle usuario</h1>
 
-  <section class="card">
-    <img
-      [src]="userDetail?.image"
-      class="card-img-top"
-      alt="Imagen del usuario"
-    />
+  <article class="card">
+    <figure>
+      <img
+        [src]="userDetail?.image"
+        class="card-img-top"
+        alt="Imagen del usuario"
+      />
+    </figure>
 
-    <div class="card-body">
-      <h2 class="card-title">{{ userDetail?.first_name }}</h2>
-      <h2 class="card-title">{{ userDetail?.last_name }}</h2>
+    <section class="card-body">
+      <header>
+        <h2 class="card-title">{{ userDetail?.first_name }}</h2>
+        <h2 class="card-title">{{ userDetail?.last_name }}</h2>
+      </header>
       <hr />
 
       <!-- Usuario -->
-      <div class="row mb-2">
-        <div class="col-3 fw-bold">Usuario:</div>
-        <div class="col-9">{{ userDetail?.username }}</div>
-      </div>
+      <dl class="row mb-2">
+        <dt class="col-3 fw-bold">Usuario:</dt>
+        <dd class="col-9">{{ userDetail?.username }}</dd>
+      </dl>
 
       <!-- Email -->
-      <div class="row mb-2 align-items-center">
-        <div class="col-3 fw-bold">Email:</div>
-        <div class="col-9">
+      <dl class="row mb-2 align-items-center">
+        <dt class="col-3 fw-bold">Email:</dt>
+        <dd class="col-9">
           <input
             type="text"
             class="form-control-plaintext w-100"
             [value]="userDetail?.email"
             readonly
           />
-        </div>
-      </div>
+        </dd>
+      </dl>
 
       <!-- Password -->
-      <div class="row mb-2 align-items-center">
-        <div class="col-3 fw-bold">Password:</div>
-        <div class="col-9">
+      <dl class="row mb-2 align-items-center">
+        <dt class="col-3 fw-bold">Password:</dt>
+        <dd class="col-9">
           <input
             type="password"
             class="form-control-plaintext w-100"
             [value]="userDetail?.password"
             readonly
           />
-        </div>
-      </div>
+        </dd>
+      </dl>
 
       <!-- Nº Id -->
-      <div class="row mb-2">
-        <div class="col-3 fw-bold">Nº Id:</div>
-        <div class="col-9">{{ userDetail?.id }}</div>
-      </div>
+      <dl class="row mb-2">
+        <dt class="col-3 fw-bold">Nº Id:</dt>
+        <dd class="col-9">{{ userDetail?.id }}</dd>
+      </dl>
 
       <!-- Id -->
-      <div class="row mb-3">
-        <div class="col-3 fw-bold">Id:</div>
-        <div class="col-9 text-truncate" title="{{ userDetail?._id }}">
+      <dl class="row mb-3">
+        <dt class="col-3 fw-bold">Id:</dt>
+        <dd class="col-9 text-truncate" title="{{ userDetail?._id }}">
           {{ userDetail?._id }}
-        </div>
-      </div>
+        </dd>
+      </dl>
 
       <!-- Botones -->
-      <div class="d-flex gap-2">
-        <a (click)="openModal()" class="btn btn-danger btn-lg flex-fill"
-          >Eliminar</a
-        >
+      <nav class="d-flex gap-2" aria-label="Acciones de usuario">
+        <button (click)="openModal()" class="btn btn-danger btn-lg flex-fill">
+          Eliminar
+        </button>
         <a
           [routerLink]="['/user/edit', userDetail?._id]"
           class="btn btn-primary btn-lg flex-fill"
-          >Actualizar</a
-        >
+        >Actualizar</a>
         <a [routerLink]="['/home']" class="btn btn-secondary btn-lg flex-fill"
-          >Volver a listado</a
-        >
-      </div>
-    </div>
-  </section>
+        >Volver a listado</a>
+      </nav>
+    </section>
+  </article>
 
   <router-outlet></router-outlet>
-</div>
+</main>

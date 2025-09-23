@@ -1,12 +1,4 @@
 
-
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
-/* :root {
-    --header-heigth: 64px 
-} */
-
-
 /* RESETS GLOBALES */
 
 /* Box-sizing universal para facilitar el layout */
@@ -37,6 +29,7 @@ html {
   font-size: 62.5%; /* Esto hace que 1rem = 10px (16px * 0.625 = 10px) */
   line-height: 1.15; /* Mejora la legibilidad */
   -webkit-text-size-adjust: 100%; /* Evita que Safari cambie el tamaño del texto */
+
 }
 
 /* Configuración básica para el body */

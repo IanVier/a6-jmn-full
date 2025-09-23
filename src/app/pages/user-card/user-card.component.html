@@ -1,4 +1,4 @@
-<div class="card">
+<article class="card">
     <img [src]="userDetail?.image" [routerLink]="['/user', userDetail?._id]" class="card-img-top"
         alt="Imagen de perfil">
     <div class="card-body">
@@ -35,10 +35,8 @@
                     <span>Borrar</span>
                 </div>
             </a>
-
-
         </div>
     </div>
-</div>
+</article>
 
 <router-outlet></router-outlet>
